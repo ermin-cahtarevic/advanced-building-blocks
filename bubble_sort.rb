@@ -4,13 +4,13 @@ def bubble_sort_by(array)
   n = array.length
   loop do
     swapped = false
-    for i in 1..n-1 do
+    (1..n - 1).each do |i| 
       if yield(array[i - 1], array[i]).positive?
         array[i - 1], array[i] = array[i], array[i - 1]
         swapped = true
       end
     end
-    break unless !swapped
+    break unless swapped
   end
   array
 end
